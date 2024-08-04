@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <section class="tool-board">
+            <div class="row fifth ">
+                <div class="tisra">
+                <label class="title "><b>Shapes</b></label>
+            </div>
+                <ul class="options">
+                    <li class="option tool " id="rectangle">
+                        <img src="./images/rectangle.png" alt="Rectangle">
+                        <span>Rectangle</span>
+                    </li>
+
+                    <li class="option tool " id="triangle">
+                        <img src="./images/triangle.png" alt="triangle">
+                        <span>Triangle </span>
+                    </li>
+
+                    <li class="option tool " id="circle">
+                        <img src="./images/circle.png" alt="Circle">
+                        <span>Circle</span>
+                    </li>
+                    </ul>
+
+                        <!-- <select id="shape-select" name="shapes">
+                            <option value="rectangle" class="tool" id="rectangle">Rectangle</option>
+                            <option value="circle" class="tool" id="circle">Circle</option>
+                            <option value="triangle" class="tool" id="triangle">Triangle</option>
+                            <option value="square" class="tool" id="square">Square</option>
+                        </select> -->
+
+                    
+                    <div class="option alag ">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill-color">Fill Color</label>
+                    </div>
+            </div>
+
+            <div class="row dusra ">
+                <label  class="title"><b>Options</b></label>
+                    <ul class="options">
+                    <div class="fourth">
+                        <!-- Brush hai yaha   -->
+                        <li class="option active tool" id="brush">
+                            <img src="./images/brush.png" alt="Brush">
+                            <span>Brush</span>
+                        </li>
+                        <!-- Eraser hai yaha  -->
+                        <li class="option tool  " id ="eraser">
+                            <img src="./images/eraser.png" alt="eraser ">
+                            <span>Eraser</span>
+                        </li>
+                        
+                        <li class="option">
+                            <input type="range" id="size-slider" min="1" max="30" value="5">    
+                        </li>
+                    </div>
+                    </ul>
+                </div>
+                <!-- 2222222222222222222222222222222222222222222222222222222222222 -->
+                <div class="row colors">
+                    <label  class="title"><b>Colors</b></label>
+                        <ul class="options">
+                            <li class="option selected"></li>
+                            <li class="option" ></li>
+                            <li class="option" ></li>
+                            <li class="option" ></li>
+                            <li class="option" ></li>
+    
+                                <!-- <input type="color" id="color-picker" value="#4A98F7"> -->
+                        
+                        </ul>
+                    </div>
+
+                    <div class="row buttons ">
+                        <div class="sixth">
+                        <button class="clear-canvas"> Clear Canva</button>
+                        <button class="save-img"> Save  As  Image</button>
+                    </div>
+                        </div>
+            
+        </section>  
+        <!-- This section contain The white drawing board  -->
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
+
+
+    </div>
+    <script src="style.js"></script>
+
+
+
+
+
+</body>
+</html>
