@@ -7,13 +7,13 @@ clearCanvas=document.querySelector(".clear-canvas"),
 saveImg=document.querySelector(".save-img"),
 ctx = canvas.getContext('2d', { willReadFrequently: true });
 // const shapeSelect = document.getElementById('shape-select'); 
-
 // //global variables1
-let prevMouseX,prevMouseY,snapshot,
-isDrawing = false,
+
+let prevMouseX,prevMouseY,snapshot;
+ let isDrawing = false,
 selectedTool="brush",
 brushWidth= 5,
-selectedColor="#000";
+selectedColor= "#000";
 
 
 const setCanvasBackground=()=>{
@@ -31,8 +31,7 @@ const drawRect=(e)=>{
     if(!fillColor.checked){
         return ctx.strokeRect(e.offsetX,e.offsetY,prevMouseX-e.offsetX, prevMouseY-e.offsetY);
     }
-    ctx.fillRect(e.offsetX,e.offsetY,prevMouseX-e.offsetX, prevMouseY-e.offsetY);
-    
+    ctx.fillRect(e.offsetX,e.offsetY,prevMouseX-e.offsetX, prevMouseY-e.offsetY);  
 }
 
 const drawCircle=(e)=>{
@@ -59,16 +58,17 @@ const drawTriangle=(e)=>{
         ctx.stroke();
     }
 }
+
 const starDraw=(e)=>{
     isDrawing=true;
     prevMouseX=e.offsetX;
     prevMouseY=e.offsetY;
     ctx.beginPath();   //create a new path
     ctx.lineWidth= brushWidth; //passing brushsizwe as line width 
+    ctx.strokeStyle=selectedColor;
+    ctx.fillStyle=selectedColor;
     snapshot = ctx.getImageData(0,0,canvas.width,canvas.height); //taking snapshot of canvas
 }
-
-
 
 const drawing = (e) => {
     if(!isDrawing) return;
@@ -88,8 +88,6 @@ const drawing = (e) => {
         }
 } 
 
-
-
 sizeSlider.addEventListener("change",() =>brushWidth=sizeSlider.value);
 
 toolBtns.forEach(btn=>{
@@ -106,14 +104,13 @@ toolBtns.forEach(btn=>{
 // // });
 
 
-// colorBtns.forEach(btn=>{
-//     btn.addEventListener("click",()=>{
-//         document.querySelector(".options .selected").classList.remove("selected");
-//         // btn.classList.add("selected");
-//         selectedColorwindow.getComputedStyle(btn).getPropertyValue("background-color"));
-//         console.log(btn);
-//     });
-// });
+colorBtns.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+        document.querySelector(".options .selected").classList.remove("selected");
+        btn.classList.add("selected");
+        selectedColor=(window.getComputedStyle(btn).getPropertyValue("background-color"));
+    });
+});
 
 clearCanvas.addEventListener("click",()=>{
     ctx.clearRect(0,0,canvas.width,canvas.height);

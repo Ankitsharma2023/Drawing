@@ -16,7 +16,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('images/download.jpeg');
+    background-image: url('images/ocean.jpeg');
     
 }
 
@@ -133,7 +133,7 @@ section{
         display: flex;
         justify-content: space-between;
     }
-.colors .option{
+    .colors .option{
     height: 20px;
     width: 20px;  
 
